@@ -1,5 +1,6 @@
 streamlit
 pandas
-langchain-groq
-faiss-cpu
-googletrans==4.0.0-rc1
+googletrans==4.0.0rc1
+langchain==0.1.16
+langchain-core==0.1.41
+langchain-groq==0.0.3
