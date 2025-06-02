@@ -10,7 +10,7 @@ from langchain_core.chat_history import BaseChatMessageHistory
 from langchain_core.chat_history import InMemoryChatMessageHistory
 from utility import load_properties, filter_properties, recommend_localities, translate_text
 
-# Set up LLM
+
 llm = ChatGroq(model="llama3-8b-8192", api_key=os.getenv("GROQ_API_KEY", "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"))
 
 prompt = ChatPromptTemplate.from_messages([
@@ -31,7 +31,7 @@ prompt = ChatPromptTemplate.from_messages([
 
 chain = prompt | llm
 
-# Use simple in-memory history for session
+
 memory_store = {}
 
 def get_memory(session_id: str) -> BaseChatMessageHistory:
@@ -46,11 +46,11 @@ runnable = RunnableWithMessageHistory(
     history_messages_key="history"
 )
 
-# Initialize chat history
+
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# Streamlit interface
+
 st.set_page_config(layout="centered")
 st.title("Magicbricks Property Assistant")
 

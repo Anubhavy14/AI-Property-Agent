@@ -1,7 +1,7 @@
 import pandas as pd
 
 def load_properties():
-    # Mock data - replace with actual data loading
+    
     data = {
         'project_name': ['Apex Greens', 'Elite Heights', 'Urban Nest'],
         'locality': ['Sector 74', 'Sector 137', 'Sector 150'],
@@ -15,7 +15,7 @@ def load_properties():
     return pd.DataFrame(data)
 
 def filter_properties(df, preferences):
-    # Simple filtering - implement your actual logic
+    
     filtered = df.copy()
     if preferences['status'] != 'Any':
         filtered = filtered[filtered['status'] == preferences['status']]
@@ -30,5 +30,5 @@ def recommend_localities(df):
     return df['locality'].unique()[:3]
 
 def translate_text(text):
-    # Simple translation placeholder
+    
     return text
