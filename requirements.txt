@@ -1,0 +1,5 @@
+streamlit
+pandas
+langchain-groq
+faiss-cpu
+googletrans==4.0.0-rc1
