@@ -123,7 +123,7 @@ if user_input := st.chat_input("Ask about properties in Noida..."):
     
    
     if len(st.session_state.messages) >= 2:
-        st.subheader("\U0001F3D8 Recommended Properties")
+        st.subheader("Recommended Properties")
         if not filtered_df.empty:
             for idx, row in filtered_df.head(3).iterrows():
                 with st.expander(f"{row['project_name']} - {row['locality']}"):
@@ -133,7 +133,7 @@ if user_input := st.chat_input("Ask about properties in Noida..."):
                     st.markdown(f"**Near Metro:** {'Yes' if row['metro_nearby'] else 'No'}")
                     st.markdown(f"**Distance to Office:** {row['distance_office']} km")
                     st.markdown(f"**Distance to School:** {row['distance_school']} km")
-                    st.button("\U0001F4DE Contact Seller", key=f"contact_{idx}")
+                    st.button("Contact Seller", key=f"contact_{idx}")
             
             st.subheader("Top Localities")
             for loc in recommend_localities(filtered_df):
