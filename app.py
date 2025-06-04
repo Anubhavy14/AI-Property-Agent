@@ -57,7 +57,7 @@ st.title("Magicbricks Property Assistant")
 with st.sidebar:
     st.header("Your Preferences")
     name = st.text_input("Your Name")
-    budget = st.number_input("Budget (in Rs.)", value=25)
+    budget = st.number_input("Budget (in Rs.)", value=3500000)
     bhk = st.selectbox("BHK Required", [1, 2, 3, 4], index=2)
     status = st.selectbox("Property Status", ["Any", "Ready to Move", "Under Construction"])
     metro = st.checkbox("Prefer near Metro?")
