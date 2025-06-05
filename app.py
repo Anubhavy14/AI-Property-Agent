@@ -141,11 +141,24 @@ if user_input := st.chat_input("Ask about properties in Noida..."):
             
             st.subheader("Services")
             col1, col2, col3 = st.columns(3)
+
             with col1:
-                st.button(" Schedule Site Visit")
+                if st.button(" Schedule Site Visit"):
+                    response = " Great! We can schedule a site visit for you. Please share your preferred date and contact number."
+                    st.session_state.messages.append({"role": "assistant", "content": response})
+                    st.markdown(response)
+
             with col2:
-                st.button(" Home Loan")
+                if st.button(" Home Loan"):
+                    response = " I can help you connect with top loan advisors. Could you tell me your preferred bank or loan amount?"
+                    st.session_state.messages.append({"role": "assistant", "content": response})
+                    st.markdown(response)
+
             with col3:
-                st.button("️ Interior Design")
+                if st.button("️ Interior Design"):
+                    response = " We offer interior design consultations. What style are you interested in — modern, traditional, or minimalist?"
+                    st.session_state.messages.append({"role": "assistant", "content": response})
+                    st.markdown(response)
+
         else:
             st.warning("No properties match your current filters. Try adjusting your preferences.")
